@@ -1,0 +1,17 @@
+{
+  "name": "Translate",
+  "version": "1.0.0",
+  "description": "Google Translate",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "author": "xii",
+  "license": "ISC",
+  "dependencies": {
+    "google-translate-api": "^2.3.0",
+    "minimist": "^1.2.0",
+    "minimist-string": "^1.0.2"
+  }
+}

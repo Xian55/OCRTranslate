@@ -1,0 +1,42 @@
+<Window x:Class="Protonox.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Loaded="Window_Loaded" Closed="Window_Closed" SizeChanged="HandleOnResize"
+    Title="OCR Translator" Height="250" Width="350" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanMinimize" WindowState="Maximized" Topmost="True">
+
+    <Window.Background>
+        <SolidColorBrush Opacity="0.05" Color="Black"/>
+    </Window.Background>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
+
+        <Label Name="outputText" Grid.Row="0" Content="Toggle Overlay Ctrl+Space" ClipToBounds="False"
+               HorizontalAlignment="Center" VerticalAlignment="Bottom"
+               HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"
+               Foreground="WHITE" Background="#AA000000"
+               FontWeight="Bold" FontSize="20" FontFamily="Segoe UI Semilight Italic"></Label>
+
+        <Canvas Name="CanvasMain" Background="Transparent" MouseDown="HandleMouseDown_canvas1" MouseMove="HandleMouseMove_canvas1" MouseUp="HandleMouseUp_canvas1" Grid.RowSpan="3">
+            <Border Name="RecodBorderSizeObject" BorderBrush="Red" BorderThickness="1" Canvas.Left="50" Canvas.Top="100" Width="350" Height="80">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="110"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Border>
+        </Canvas>
+
+        <Button Grid.Row="0" Width="45" Height="45" Foreground="WHITE" Background="Red" HorizontalAlignment="Right" VerticalAlignment="Top" Margin=" 0 10 10 0" Content="X" FontWeight="Bold" FontSize="25" Click="HandleOnClick_ButtonExit"></Button>
+        <Button Grid.Row="0" Width="45" Height="45" Foreground="WHITE" Background="Red" HorizontalAlignment="Right" VerticalAlignment="Top" Margin=" 0 10 65 0" Content="_" FontWeight="Bold" FontSize="25" Click="HandleOnClick_ButtonToggle"></Button>
+    </Grid>
+</Window>
